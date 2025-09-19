@@ -1,0 +1,15 @@
+{
+  "contextFileName": [
+    "GEMINI.md",
+    ".github/copilot-instructions.md"
+  ],
+  "disableAutoUpdate": true,
+  "hideTips": true,
+  "hideBanner": true,
+  "showMemoryUsage": true,
+  "selectedAuthType": "oauth-personal",
+  "telemetry": {
+    "enabled": false
+  },
+  "usageStatisticsEnabled": false
+}

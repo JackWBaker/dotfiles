@@ -1,0 +1,12 @@
+theme = catppuccin-macchiato
+
+font-family = RobotoMono Nerd Font
+font-size = 12
+maximize = true
+window-new-tab-position = end
+gtk-titlebar-hide-when-maximized = true
+
+keybind = ctrl+shift+w=new_split:up
+keybind = ctrl+shift+a=new_split:left
+keybind = ctrl+shift+s=new_split:down
+keybind = ctrl+shift+d=new_split:right

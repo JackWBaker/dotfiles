@@ -1,0 +1,57 @@
+[language-server.angular]
+command = "ngserver"
+args = ["--stdio", "--tsProbeLocations", "/home/jbaker/.local/share/pnpm/global/5/node_modules", "--ngProbeLocations", "/home/jbaker/.local/share/pnpm/global/5/node_modules"]
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+required-root-patterns = ["biome.json", "biome.jsonc"]
+
+[[language]]
+name = "typescript"
+roots = ["angular.json", "project.json"]
+language-servers = ["angular", "vscode-eslint-language-server", { name = "typescript-language-server", except-features = ["format"] }]
+formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
+formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = [{ name = "vscode-json-language-server", except-features = ["format"] }]
+formatter = { command = "prettier", args = ["--write", "--parser", "json"] }
+auto-format = true
+
+[[language]]
+name = "html"
+roots = ["angular.json", "project.json"]
+language-servers = ["angular", { name = "vscode-html-language-server", except-features = ["format"] }]
+formatter = { command = "prettier", args = ["--write", "--parser", "angular"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["biome", { name = "vscode-css-language-server", except-features = ["format"] }]
+formatter = { command = "prettier", args = ["--write", "--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "scss"
+language-servers = [{ name = "vscode-css-language-server", except-features = ["format"] }]
+formatter = { command = "prettier", args = ["--write", "--parser", "scss"] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "prettier", args = ["--write", "--parser", "yaml"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--write", "--parser", "markdown"] }
+auto-format = true
+
