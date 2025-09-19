@@ -12,6 +12,7 @@ This repository contains configurations for the following applications:
 - **Lazygit**: A simple terminal UI for git commands.
 - **Ghostty**: A modern GPU-accelerated terminal emulator.
 - **Gemini**: The Gemini CLI.
+- **Btop**: A resource monitor.
 
 ## Installation
 
@@ -56,3 +57,4 @@ Make sure you have the following software installed:
 - [Lazygit](https://github.com/jesseduffield/lazygit)
 - [Ghostty](https://github.com/ghostty-org/ghostty)
 - [Gemini](https://gemini.google.com/)
+- [Btop](https://github.com/aristocratos/btop)
