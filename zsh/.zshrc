@@ -1,16 +1,52 @@
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-unsetopt beep
-bindkey -v
-zstyle :compinstall filename '/home/jbaker/.zshrc'
+# ~/.zshrc
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+
+# General
+unsetopt BEEP
+bindkey -v # Use vi mode
+
+# zgen-prebuilt: A lightweight zsh plugin manager.
+# https://github.com/zgen-dev/zgen-prebuilt
+# Clone it with: git clone https://github.com/zgen-dev/zgen-prebuilt.git "${HOME}/.zgen"
+if [[ ! -f ${HOME}/.zgen/zgen.zsh ]]
+then
+    print "zgen not found. Please clone it with:"
+    print "git clone https://github.com/zgen-dev/zgen-prebuilt.git \"${HOME}/.zgen\""
+else
+    source "${HOME}/.zgen/zgen.zsh"
+
+    # Check if there are any changes to the plugins
+    if ! zgen saved
+    then
+        # --- Plugins ---
+        zgen load zsh-users/zsh-autosuggestions
+        zgen load zsh-users/zsh-completions
+        zgen load zsh-users/zsh-history-substring-search
+        zgen load zsh-users/zsh-syntax-highlighting
+
+        # Save the plugin list to a file
+        zgen save
+    fi
+fi
+
+# Completions
 autoload -Uz compinit
-compinit
+compinit -i
 
 # pnpm
 export PNPM_HOME="/home/jbaker/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
+  *":$PNPM_HOME:"* ) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
@@ -33,15 +69,9 @@ source <(ng completion script)
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # homebrew end
 
-# zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# zsh-autosuggestions end
-
 # starship
 eval "$(starship init zsh)"
 # starship end
-
-
 
 # bun completions
 [ -s "/home/jbaker/.bun/_bun" ] && source "/home/jbaker/.bun/_bun"
@@ -49,3 +79,9 @@ eval "$(starship init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'

@@ -22,15 +22,35 @@ These dotfiles are managed using `stow`. To install them, clone this repository 
 ```bash
 git clone https://github.com/your-username/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-stow */
+stow zsh
+stow starship
+# etc.
 ```
+
+## Application Setup
+
+### Zsh
+
+The Zsh configuration uses `zgen-prebuilt` as a plugin manager.
+
+1.  **Install `zgen-prebuilt`:**
+    ```sh
+    git clone https://github.com/zgen-dev/zgen-prebuilt.git "${HOME}/.zgen"
+    ```
+
+2.  **Stow the configuration:**
+    ```sh
+    stow zsh
+    ```
+
+3.  **Open a new terminal:** The first time you open a new terminal, the plugins will be installed automatically.
 
 ## Prerequisites
 
 Make sure you have the following software installed:
 
 - [Stow](https://www.gnu.org/software/stow/)
-- [Zsh](https.org/)
+- [Zsh](https://www.zsh.org/)
 - [Starship](https://starship.rs/)
 - [Helix](https://helix-editor.com/)
 - [Lazygit](https://github.com/jesseduffield/lazygit)
