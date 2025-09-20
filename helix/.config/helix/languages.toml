@@ -2,10 +2,27 @@
 command = "ngserver"
 args = ["--stdio", "--tsProbeLocations", "/home/jbaker/.local/share/pnpm/global/5/node_modules", "--ngProbeLocations", "/home/jbaker/.local/share/pnpm/global/5/node_modules"]
 
-[language-server.biome]
-command = "biome"
-args = ["lsp-proxy"]
-required-root-patterns = ["biome.json", "biome.jsonc"]
+[language-server.vscode-eslint-language-server]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-eslint-language-server.config]
+validate = "on"
+experimental = { useFlatConfig = true }
+rulesCustomizations = []
+run = "onType"
+problems = { shortenToSingleLine = false }
+nodePath = ""
+
+[language-server.vscode-eslint-language-server.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.vscode-eslint-language-server.config.codeAction.showDocumentation]
+enable = true
+
+[language-server.vscode-eslint-language-server.config.workingDirectory]
+mode = "location"
 
 [[language]]
 name = "typescript"
@@ -16,7 +33,7 @@ auto-format = true
 
 [[language]]
 name = "javascript"
-language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
+language-servers = ["vscode-eslint-language-server", { name = "typescript-language-server", except-features = ["format"] }]
 formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
 auto-format = true
 
@@ -54,4 +71,3 @@ auto-format = true
 name = "markdown"
 formatter = { command = "prettier", args = ["--write", "--parser", "markdown"] }
 auto-format = true
-
