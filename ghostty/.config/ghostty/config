@@ -1,4 +1,4 @@
-theme = catppuccin-macchiato
+theme = catppuccin-macchiato.conf
 
 font-family = RobotoMono Nerd Font
 font-size = 12
