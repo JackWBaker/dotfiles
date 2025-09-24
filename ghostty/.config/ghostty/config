@@ -1,10 +1,14 @@
 theme = catppuccin-macchiato.conf
 
 font-family = RobotoMono Nerd Font
-font-size = 12
-maximize = true
-window-new-tab-position = end
+font-size = 14
 gtk-titlebar-hide-when-maximized = true
+macos-option-as-alt = left
+macos-titlebar-style = tabs
+maximize = true
+quick-terminal-position=center
+window-new-tab-position = end
+working-directory = inherit
 
 keybind = ctrl+shift+w=new_split:up
 keybind = ctrl+shift+a=new_split:left
