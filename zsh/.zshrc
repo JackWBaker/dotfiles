@@ -65,20 +65,9 @@ source <(ng completion script)
 . "$HOME/.cargo/env"
 # rust end
 
-# homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# homebrew end
-
 # starship
 eval "$(starship init zsh)"
 # starship end
-
-# bun completions
-[ -s "/home/jbaker/.bun/_bun" ] && source "/home/jbaker/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Aliases
 alias ls='ls --color=auto'
