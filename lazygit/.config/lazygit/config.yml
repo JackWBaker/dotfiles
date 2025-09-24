@@ -1,0 +1,9 @@
+git:
+  diffContextSize: 5
+  forcePushStrategy: "ForceWithLease"
+gui:
+  nerdFontsVersion: "3"
+  showBottomLine: true
+  showFileTree: true
+  sidePanelWidth: 0.333
+quitOnTopLevelReturn: true
