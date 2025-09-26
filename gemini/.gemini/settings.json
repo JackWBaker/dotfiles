@@ -1,15 +1,27 @@
 {
-  "contextFileName": [
-    "GEMINI.md",
-    ".github/copilot-instructions.md"
-  ],
-  "disableAutoUpdate": true,
-  "hideTips": true,
-  "hideBanner": true,
-  "showMemoryUsage": true,
-  "selectedAuthType": "oauth-personal",
+  "context": {
+    "fileName": [
+      "GEMINI.md",
+      ".github/copilot-instructions.md"
+    ]
+  },
+  "general": {
+    "disableAutoUpdate": true
+  },
+  "ui": {
+    "hideTips": true,
+    "hideBanner": true,
+    "showMemoryUsage": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
   "telemetry": {
     "enabled": false
   },
-  "usageStatisticsEnabled": false
+  "privacy": {
+    "usageStatisticsEnabled": false
+  }
 }

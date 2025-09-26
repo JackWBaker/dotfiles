@@ -1,5 +1,3 @@
-# ~/.zshrc
-
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -21,7 +19,7 @@ bindkey -v # Use vi mode
 if [[ ! -f ${HOME}/.zgen/zgen.zsh ]]
 then
     print "zgen not found. Please clone it with:"
-    print "git clone https://github.com/zgen-dev/zgen-prebuilt.git \"${HOME}/.zgen\""
+    print "git clone https://github.com/tarjoilija/zgen.git \"${HOME}/.zgen\""
 else
     source "${HOME}/.zgen/zgen.zsh"
 
